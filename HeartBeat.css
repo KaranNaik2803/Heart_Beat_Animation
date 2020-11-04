@@ -1,0 +1,52 @@
+body{
+    background: linear-gradient(-45deg,#34f783,#f3fd5e,#34f783);
+    overflow: hidden;
+}
+
+.heart{
+    height: 200px;
+    width: 200px;
+    background: red;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: rotate(-45deg);
+    animation: beat 1.5s ease infinite;
+}
+
+.heart::before{
+    content: "";
+    height: 200px;
+    width: 200px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: 0;
+}
+
+.heart::after{
+    content: " ";
+    height: 200px;
+    width: 200px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+
+@keyframes beat{
+    0%{
+        transform: scale(1) rotate(-45deg);
+    }
+
+    50%{
+        transform: scale(0.5) rotate(-45deg);
+        opacity: 0.4;
+    }
+
+}
